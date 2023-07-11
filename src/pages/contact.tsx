@@ -71,8 +71,9 @@ const ContactPage: React.FC<PageProps> = () => {
   return (
     <main>
       <h1> Contact Us Page</h1>
-      <div>
-        <span>Contact Us</span>
+      <div className="container">
+        <div className="form-container">
+        <h2>Contact Us</h2>
         <p>Please provide some information to get started.</p>
         <Form
          onSubmit={onSubmit}
@@ -99,51 +100,51 @@ const ContactPage: React.FC<PageProps> = () => {
           className=""
           onSubmit={handleSubmit}
         >
-          <fieldset>
+          <div>
             <Field
               id="email"
               type="email"
               placeholder="Email"
-              className=""
+              className="form-field"
               name="email"
               aria-required="true"
               component="input"
             />
             <Error name="email" />
-          </fieldset>
+          </div>
 
-          <fieldset>
+          <div>
             <Field
               id="name"
               type="name"
               placeholder="Name"
-              className=""
+              className="form-field"
               name="name"
               aria-required="true"
               component="input"
             />
             <Error name="name" />
-          </fieldset>
+          </div>
 
-          <fieldset>
+          <div>
             <Field
               id="phone_number"
               type="phone_number"
-              placeholder=" NumberP"
-              className=""
+              placeholder=" Phone Number"
+              className="form-field"
               name="phone_number"
               aria-required="true"
               component="input"
             />
             <Error name="phone_number" />
-          </fieldset>
+          </div>
 
-          <fieldset>
+          <div>
             <Field
               id="contact_options"
               name="contact_options"
               aria-required="true"
-              className=""
+              className="form-field"
               component="select"
             >
               {contactOptions.map((option) => (
@@ -152,11 +153,11 @@ const ContactPage: React.FC<PageProps> = () => {
                 </option>
               ))}
             </Field>
-          </fieldset>
+          </div>
 
           <button
             type="submit"
-            className=""
+            className="btn"
             aria-label="Submit form"
             disabled={submitting}
           >
@@ -165,6 +166,16 @@ const ContactPage: React.FC<PageProps> = () => {
         </form>
           )}
         </Form>
+        </div>
+        
+        <div className="">
+          <p>In publishing and graphic design, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <span>Phone:</span>
+          <p>+ (877) 777-7777</p>
+
+          <span>Hours:</span>
+          <p>Monday - Sunday: 7am - 11pm EST</p>
+        </div>
 
       </div>
    
