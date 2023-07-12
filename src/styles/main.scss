@@ -1,0 +1,27 @@
+@import './components/footer';
+@import './pages/contact';
+
+body, html {
+  background-color: #ffffff;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body, * {
+  font-family: "Inter";
+  font-weight: 400;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-width: 0;
+}

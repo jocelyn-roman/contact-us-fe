@@ -1,0 +1,114 @@
+
+$gray-light: #c4c4c4;
+$blue: #0b92f1;
+
+.black-section {
+  color: #fff;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+
+  & > p {
+    margin: 8px 0;
+    font-size: 0.875rem;
+  }
+}
+
+.company-name {
+  font-size: 1.563rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 11.625rem;
+}
+
+.contact-us-info-container {
+  margin-top: 115px;
+  padding-left: 33px;
+  width: 35%;
+}
+
+.contact-us-info {
+  margin-bottom: 1.5rem;
+}
+
+.contact-us-phone {
+  font-size: 1.125rem;
+  display: block;
+  margin: 0.25rem 0 1.5rem;
+  color: $blue;
+}
+
+.contact-us-title {
+  font-size: 1.5rem;
+}
+
+.contact-us-description {
+  font-size: 0.875rem;
+  margin-bottom: 2.875rem;
+}
+
+// Forms
+.contact-us-form {
+  width: 60%;
+}
+
+.form-field-container {
+  margin-bottom: 1.688rem;
+}
+
+.form-field {
+  width: 100%;
+  padding-left: 1.125rem;
+  padding-top: 1.375rem;
+  padding-bottom: 1.375rem;
+  border-radius: 5px;
+  border: 1px solid $gray-light;
+  background: #fff;
+  font-size: 1rem;
+
+  &::placeholder {
+    color: $gray-light;
+    opacity: 1;
+  }
+}
+
+.form-error {
+  color: red;
+  margin-top: .5rem;
+  font-size: .875rem;
+}
+
+.form-floating-container {
+  position: relative;
+}
+
+.floating-label {
+  position: absolute;
+  top: -8px;
+  left: 65px;
+  background: #fff;
+  padding: 0 5px;
+  color: $gray-light;
+}
+
+.btn-wrapper {
+  display: flex;
+  justify-content: right;
+}
+
+.btn {
+  display: inline-block;
+  color: #fff;
+  background-color: black;
+  text-align: center;
+  border: 1px solid transparent;
+  padding: 0.625rem 2.813rem;
+  font-size: 1.5rem;
+  border-radius: 0.313rem;
+}
