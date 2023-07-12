@@ -11,9 +11,14 @@
 
 .footer-main {
   display: flex;
-  flex-direction: row;
-  padding: 0 10.375rem;
+  flex-direction: column;
+  padding: 0 1rem;
   margin-bottom: 2rem;
+
+  @media (min-width: 768px) {
+    padding: 0 10.375rem;
+    flex-direction: row;
+  }
 }
 
 .footer-arrow {
@@ -30,8 +35,12 @@
 
 .footer-links {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 40%;
+
+  @media (min-width: 768px) {
+    flex-direction: row
+  }
 
   & a {
     color: #fff;

@@ -22,15 +22,23 @@ $blue: #0b92f1;
 
 .container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
-  margin: 0 11.625rem;
+
+  @media (min-width: 768px) {
+    margin: 0 11.625rem;
+    flex-direction: row;
+  }
 }
 
 .contact-us-info-container {
   margin-top: 115px;
-  padding-left: 33px;
-  width: 35%;
+  padding: 0 1rem;
+
+  @media (min-width: 768px) {
+    width: 35%;
+    padding-left: 33px;
+  }
 }
 
 .contact-us-info {
@@ -60,7 +68,13 @@ $blue: #0b92f1;
 
 // Forms
 .contact-us-form {
-  width: 60%;
+  width: 80%;
+  margin-left: 1rem;
+
+  @media (min-width: 768px) {
+    width: 60%;
+    margin-left: 0;
+  }
 }
 
 .form-field-container {
@@ -104,8 +118,12 @@ $blue: #0b92f1;
 
 .btn-wrapper {
   display: flex;
-  justify-content: right;
+  justify-content: left;
   margin-bottom: 0.875rem;
+
+  @media (min-width: 768px) {
+    justify-content: right;
+  }
 }
 
 .btn {
