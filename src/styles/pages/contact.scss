@@ -42,6 +42,11 @@ $blue: #0b92f1;
   display: block;
   margin: 0.25rem 0 1.5rem;
   color: $blue;
+  text-decoration: none;
+
+  &:focus, &:hover {
+    text-decoration: underline;
+  }
 }
 
 .contact-us-title {
@@ -100,6 +105,7 @@ $blue: #0b92f1;
 .btn-wrapper {
   display: flex;
   justify-content: right;
+  margin-bottom: 0.875rem;
 }
 
 .btn {

@@ -10,9 +10,14 @@ body, html {
   padding: 0;
 }
 
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 body, * {
   font-family: "Inter";
-  font-weight: 400;
 }
 
 .visually-hidden {

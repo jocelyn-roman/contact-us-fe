@@ -4,6 +4,7 @@ import { Form, Field } from 'react-final-form';
 import { isValidEmail, isValidPhone } from "../helpers";
 import { useState } from "react";
 import Link from "next/link";
+import Footer from "../components/Footer/Footer";
 
 const contactOptions = [
   {
@@ -70,6 +71,7 @@ const ContactPage: React.FC<PageProps> = () => {
   }
 
   return (
+    <>
     <main role="main">
       <h1 className="visually-hidden"> Contact Us Page</h1>
       <div className="black-section">
@@ -190,6 +192,8 @@ const ContactPage: React.FC<PageProps> = () => {
       </div>
    
     </main>
+    <Footer></Footer>
+    </>
   )
 
   
