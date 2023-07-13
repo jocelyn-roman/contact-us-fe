@@ -3,7 +3,6 @@ import type { HeadFC, PageProps } from "gatsby"
 import { Form, Field } from 'react-final-form';
 import { isValidEmail, isValidPhone } from "../helpers";
 import { useState } from "react";
-import Link from "next/link";
 import Footer from "../components/Footer/Footer";
 
 const contactOptions = [
@@ -184,7 +183,7 @@ const ContactPage: React.FC<PageProps> = () => {
         <div className="contact-us-info-container">
           <p className="contact-us-info">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.</p>
           <b>Phone:</b>
-          <Link href="tel:+18777777777" className="contact-us-phone">+1 (877) 777-7777</Link>
+          <a href="tel:+18777777777" className="contact-us-phone">+1 (877) 777-7777</a>
           <b>Hours:</b>
           <p>Monday - Sunday: <b>7am - 11pm EST</b></p>
         </div>
