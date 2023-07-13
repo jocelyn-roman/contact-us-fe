@@ -1,5 +1,4 @@
 import * as React from "react"
-import Link from "next/link";
 
 const footerLinks = [
   {
@@ -39,7 +38,10 @@ const footerLinks = [
 ];
 
 const Footer = () => {
-  const emailInput = document.getElementsByClassName("email");
+  if (typeof document !== "undefined") {
+    const emailInput = document.getElementsByClassName("email");
+  }
+  
 
   return (
     <footer className="footer">
@@ -60,7 +62,7 @@ const Footer = () => {
               {item.items.map((link) => {
                 return (
                   <li className="footer-links-item">
-                    <Link href={link.url}>{link.name}</Link>
+                    <a href={link.url}>{link.name}</a>
                   </li>
                 )
               })}
