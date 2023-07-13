@@ -3,6 +3,8 @@ import type { HeadFC, PageProps } from "gatsby"
 import { Form, Field } from 'react-final-form';
 import { isValidEmail, isValidPhone } from "../helpers";
 import { useState } from "react";
+import Link from "next/link";
+import Footer from "../components/Footer/Footer";
 
 const contactOptions = [
   {
@@ -69,117 +71,129 @@ const ContactPage: React.FC<PageProps> = () => {
   }
 
   return (
-    <main>
-      <h1> Contact Us Page</h1>
+    <>
+    <main role="main">
+      <h1 className="visually-hidden"> Contact Us Page</h1>
+      <div className="black-section">
+        <p>Learn more about our latest features</p>
+      </div>
+      <p className="company-name">Company Name</p>
       <div className="container">
-        <div className="form-container">
-        <h2>Contact Us</h2>
-        <p>Please provide some information to get started.</p>
-        <Form
-         onSubmit={onSubmit}
-         validate={(values) => {
-          const errors: ValidateProps = {};
-  
-          if (!values.email) {
-            errors.email = 'Required';
-          } else if (!isValidEmail(values.email)) {
-            errors.email = 'Email is required and should not contain @gmail.';
-          }
+        <div className="contact-us-form">
+          <h2 className="contact-us-title">Contact Us</h2>
+          <p className="contact-us-description">Please provide some information to get started.</p>
+          <Form
+          onSubmit={onSubmit}
+          validate={(values) => {
+            const errors: ValidateProps = {};
+    
+            if (!values.email) {
+              errors.email = 'Required';
+            } else if (!isValidEmail(values.email)) {
+              errors.email = 'Email is required and should not contain @gmail.';
+            }
 
-          if (!values.phone_number) {
-            errors.phone_number = 'Required';
-          } else if (!isValidPhone(values.phone_number)) {
-            errors.phone_number = 'Phone number is required and should contain 10 digits.';
-          }
-          
-          return errors;
-        }}>
-        {({ handleSubmit, form, submitting, values }) => (
-        <form
-          id="contact-us-form"
-          className=""
-          onSubmit={handleSubmit}
-        >
-          <div>
-            <Field
-              id="email"
-              type="email"
-              placeholder="Email"
-              className="form-field"
-              name="email"
-              aria-required="true"
-              component="input"
-            />
-            <Error name="email" />
-          </div>
-
-          <div>
-            <Field
-              id="name"
-              type="name"
-              placeholder="Name"
-              className="form-field"
-              name="name"
-              aria-required="true"
-              component="input"
-            />
-            <Error name="name" />
-          </div>
-
-          <div>
-            <Field
-              id="phone_number"
-              type="phone_number"
-              placeholder=" Phone Number"
-              className="form-field"
-              name="phone_number"
-              aria-required="true"
-              component="input"
-            />
-            <Error name="phone_number" />
-          </div>
-
-          <div>
-            <Field
-              id="contact_options"
-              name="contact_options"
-              aria-required="true"
-              className="form-field"
-              component="select"
-            >
-              {contactOptions.map((option) => (
-                <option value={option['value']}>
-                  {option['name']}
-                </option>
-              ))}
-            </Field>
-          </div>
-
-          <button
-            type="submit"
-            className="btn"
-            aria-label="Submit form"
-            disabled={submitting}
+            if (!values.phone_number) {
+              errors.phone_number = 'Required';
+            } else if (!isValidPhone(values.phone_number)) {
+              errors.phone_number = 'Phone number is required and should contain 10 digits.';
+            }
+            
+            return errors;
+          }}>
+          {({ handleSubmit, form, submitting, values }) => (
+          <form
+            id="contact-us-form"
+            className=""
+            onSubmit={handleSubmit}
           >
-            Submit
-          </button>
-        </form>
-          )}
-        </Form>
+            <div className="form-field-container">
+              <Field
+                id="email"
+                type="email"
+                placeholder="Email"
+                className="form-field"
+                name="email"
+                aria-required="true"
+                component="input"
+              />
+              <Error name="email" />
+            </div>
+
+            <div className="form-field-container">
+              <Field
+                id="name"
+                type="name"
+                placeholder="Name"
+                className="form-field"
+                name="name"
+                aria-required="true"
+                component="input"
+              />
+              <Error name="name" />
+            </div>
+
+            <div className="form-field-container">
+              <Field
+                id="phone_number"
+                type="phone_number"
+                placeholder=" Phone Number"
+                className="form-field"
+                name="phone_number"
+                aria-required="true"
+                component="input"
+              />
+              <Error name="phone_number" />
+            </div>
+
+            <div className="form-field-container form-floating-container">
+              
+              <Field
+                id="contact_options"
+                name="contact_options"
+                aria-required="true"
+                className="form-field"
+                component="select"
+              >
+                {contactOptions.map((option) => (
+                  <option value={option['value']}>
+                    {option['name']}
+                  </option>
+                ))}
+              </Field>
+              <label className="floating-label">How We Can Help You?</label>
+            </div>
+
+            <div className="btn-wrapper">
+              <button
+                type="submit"
+                className="btn"
+                aria-label="Submit form"
+                disabled={submitting}
+              >
+              Submit
+              </button>
+            </div>
+            
+              
+          </form>
+            )}
+          </Form>
         </div>
         
-        <div className="">
-          <p>In publishing and graphic design, Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <span>Phone:</span>
-          <p>+ (877) 777-7777</p>
-
-          <span>Hours:</span>
-          <p>Monday - Sunday: 7am - 11pm EST</p>
+        <div className="contact-us-info-container">
+          <p className="contact-us-info">In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before the final copy is available.</p>
+          <b>Phone:</b>
+          <Link href="tel:+18777777777" className="contact-us-phone">+1 (877) 777-7777</Link>
+          <b>Hours:</b>
+          <p>Monday - Sunday: <b>7am - 11pm EST</b></p>
         </div>
 
       </div>
    
     </main>
+    <Footer></Footer>
+    </>
   )
 
   
